@@ -112,10 +112,7 @@ def printing_all_data():
 char_to_float_in_data()
 #########################################################################
 
-
-# I VE COMMITTED COUPLE STRINGS
-
-
+# something happened
 
 '''for experiment_time in data:
     for vector in data[experiment_time]["vector_data"]:
