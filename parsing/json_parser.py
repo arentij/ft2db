@@ -113,8 +113,7 @@ char_to_float_in_data()
 #########################################################################
 
 
-# I VE COMMITTED COUPLE STRINGS
-
+# something happened
 
 
 '''for experiment_time in data:
@@ -142,6 +141,7 @@ for experiment_time in data:
               data[experiment_time]["scalar_data"]["taue"],
               data[experiment_time]["scalar_data"]["tna"],
               data[experiment_time]["scalar_data"]["tgo"],
+              # data[experiment_time]["scalar_data"]["tgo"],
               sep='    ')
 
 
