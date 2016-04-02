@@ -141,24 +141,6 @@ for experiment_time in data:
               sep='    ')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Ways to print all data that is in the database
 
 # Written above
