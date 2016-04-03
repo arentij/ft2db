@@ -21,7 +21,7 @@ def converting(fl):
         return float(fl)
 
 # Opening JSON file
-with open('all_results_2016-04-02T13-30-38-04-00.json') as json_data:
+with open('all_results.json') as json_data:
     data = json.load(json_data)
 
 
@@ -61,9 +61,12 @@ def char_to_float_in_data():
 
             elif data_set.lower() == "vector_data":
                 for vector in data[exp_time][data_set]:
-                    for i in range(len(data[exp_time][data_set][vector])):
-                        data[exp_time][data_set][vector][i] = converting(data[exp_time][data_set][vector][i])
-                    # print(vector, ' = ', data[exp_time][data_set][vector])
+                    try:
+                        for i in range(len(data[exp_time][data_set][vector])):
+                            data[exp_time][data_set][vector][i] = converting(data[exp_time][data_set][vector][i])
+                            # print(vector, ' = ', data[exp_time][data_set][vector])
+                    except ValueError:
+                            data[exp_time][data_set][vector][i] = 0
 
 
 def printing_all_data():
@@ -112,7 +115,12 @@ def printing_all_data():
 char_to_float_in_data()
 #########################################################################
 
+'''for experiment_time in data:
+    if data[experiment_time]["type"] == "OH":
+        if data[experiment_time]["vector_data"]["q"][0] >= 1 and data[experiment_time]["vector_data"]["ne"][0] >= 2:
 
+            print(experiment_time, "q  =", data[experiment_time]["vector_data"]["q"][0], sep="  ")
+'''
 # something happened
 
 
@@ -156,11 +164,6 @@ for experiment_time in data:
 # pprint(data["101209_0.027"])
 
 
-# ok this was made in master branch
-
-# hello artur
-
-print("Hello, World")
 
 
 
