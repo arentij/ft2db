@@ -110,7 +110,7 @@ def printing_all_data():
                 print()
 
 
-############################## IMPORTANT ################################
+# ############################# IMPORTANT ################################
 # Necessary to start this at the very beginning to switch weird strings in database to the float format
 char_to_float_in_data()
 #########################################################################
@@ -151,7 +151,6 @@ for experiment_time in data:
               data[experiment_time]["scalar_data"]["tgo"],
               # data[experiment_time]["scalar_data"]["tgo"],
               sep='    ')
-
 
 
 # Ways to print all data that is in the database
