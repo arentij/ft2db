@@ -115,12 +115,12 @@ def printing_all_data():
 char_to_float_in_data()
 #########################################################################
 
-'''for experiment_time in data:
+for experiment_time in data:
     if data[experiment_time]["type"] == "OH":
         if data[experiment_time]["vector_data"]["q"][0] >= 1 and data[experiment_time]["vector_data"]["ne"][0] >= 2:
 
             print(experiment_time, "q  =", data[experiment_time]["vector_data"]["q"][0], sep="  ")
-'''
+
 # something happened
 
 
