@@ -117,9 +117,13 @@ char_to_float_in_data()
 
 for experiment_time in data:
     if data[experiment_time]["type"] == "OH":
-        if data[experiment_time]["vector_data"]["q"][0] >= 1 and data[experiment_time]["vector_data"]["ne"][0] >= 2:
+        if data[experiment_time]["vector_data"]["q"][0] <= 1 and data[experiment_time]["vector_data"]["ne"][0] >= 0:
 
             print(experiment_time, "q  =", data[experiment_time]["vector_data"]["q"][0], sep="  ")
+            try:
+                print("Zeff  =", data[experiment_time]["vector_data"]["zef"][0], sep="  ")
+            except KeyError:
+                print(experiment_time, ' does not have zeff vector')
 
 # something happened
 
@@ -142,7 +146,8 @@ for experiment_time in data:
             print(data[experiment_time]["vector_data"]["vpra"]*data[experiment_time]["vector_data"]["te"])
             # print(data[experiment_time]["vector_data"]["te"])
             '''
-print('Exp            Time     Taue      TNA      TGO')
+
+'''print('Exp            Time     Taue      TNA      TGO')
 for experiment_time in data:
     if data[experiment_time]["type"] == "OH":
         print(experiment_time[0:-6], ' ', experiment_time[-5:],
@@ -151,7 +156,7 @@ for experiment_time in data:
               data[experiment_time]["scalar_data"]["tgo"],
               # data[experiment_time]["scalar_data"]["tgo"],
               sep='    ')
-
+'''
 
 
 # Ways to print all data that is in the database
