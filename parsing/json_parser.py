@@ -114,7 +114,7 @@ def printing_all_data():
 # Necessary to start this at the very beginning to switch weird strings in database to the float format
 char_to_float_in_data()
 #########################################################################
-
+'''
 for experiment_time in data:
     if data[experiment_time]["type"] == "OH":
         if data[experiment_time]["vector_data"]["q"][0] <= 1 and data[experiment_time]["vector_data"]["ne"][0] >= 0:
@@ -124,7 +124,7 @@ for experiment_time in data:
                 print("Zeff  =", data[experiment_time]["vector_data"]["zef"][0], sep="  ")
             except KeyError:
                 print(experiment_time, ' does not have zeff vector')
-
+'''
 # something happened
 
 
@@ -170,6 +170,13 @@ for experiment_time in data:
 # pprint(data["101209_0.027"])
 
 
+
+
+# Exporting database back to json
+'''
+with open('data.json', 'w') as outfile:
+    json.dump(data, outfile)
+    '''
 
 
 
