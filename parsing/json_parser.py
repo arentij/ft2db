@@ -114,20 +114,23 @@ def printing_all_data():
 # Necessary to start this at the very beginning to switch weird strings in database to the float format
 char_to_float_in_data()
 #########################################################################
-'''
-for experiment_time in data:
+
+# EXAMPLES
+# Printing q and zeff in Ohmic experiments where q(0) < 1 and ne(0) > 4
+'''for experiment_time in data:
     if data[experiment_time]["type"] == "OH":
-        if data[experiment_time]["vector_data"]["q"][0] <= 1 and data[experiment_time]["vector_data"]["ne"][0] >= 0:
+        if data[experiment_time]["vector_data"]["q"][0] <= 1 and data[experiment_time]["vector_data"]["ne"][0] >= 4:
 
             print(experiment_time, "q  =", data[experiment_time]["vector_data"]["q"][0], sep="  ")
             try:
                 print("Zeff  =", data[experiment_time]["vector_data"]["zef"][0], sep="  ")
             except KeyError:
                 print(experiment_time, ' does not have zeff vector')
+
 '''
-# something happened
 
 
+# printing all vector data names in first dataset
 '''for experiment_time in data:
     for vector in data[experiment_time]["vector_data"]:
         print(vector)
@@ -143,18 +146,19 @@ for experiment_time in data:
                   " Time =", 1000*data[experiment_time]["standard_data"]["time"],
                   " Current = ", data[experiment_time]["standard_data"]["i"]*1000
                   )
-            print(data[experiment_time]["vector_data"]["vpra"]*data[experiment_time]["vector_data"]["te"])
             # print(data[experiment_time]["vector_data"]["te"])
-            '''
+'''
 
-'''print('Exp            Time     Taue      TNA      TGO')
+# Printing electron energy confinement time, scaling times and mass of main ions
+'''
+print('Exp            Time     Taue      TNA      TGO       a')
 for experiment_time in data:
     if data[experiment_time]["type"] == "OH":
         print(experiment_time[0:-6], ' ', experiment_time[-5:],
               data[experiment_time]["scalar_data"]["taue"],
               data[experiment_time]["scalar_data"]["tna"],
               data[experiment_time]["scalar_data"]["tgo"],
-              # data[experiment_time]["scalar_data"]["tgo"],
+              data[experiment_time]["scalar_data"]["amj"],
               sep='    ')
 '''
 
@@ -162,15 +166,18 @@ for experiment_time in data:
 # Ways to print all data that is in the database
 
 # Written above
-# printing_all_data()
+'''
+printing_all_data()
+'''
 
 # Standard Python JSON printing
-# pprint(data)
+'''
+pprint(data)
+'''
 # or specific exp
-# pprint(data["101209_0.027"])
-
-
-
+'''
+pprint(data["101209_0.027"])
+'''
 
 # Exporting database back to json
 '''
