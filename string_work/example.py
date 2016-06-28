@@ -1,8 +1,8 @@
 import re
 
 # match search findall sub
-pattern = r"abc"
-string = "ac abc aac acc abc"
+pattern = r"aa"
+string = "aaaaa"
 match_object = re.match(pattern, string)
 search_object = re.search(pattern, string)
 findall_object = re.findall(pattern, string)
@@ -14,8 +14,3 @@ print(sub_object)
 '''
 
 print(findall_object)
-
-if len(findall_object) >= 2:
-    print("Yes")
-else:
-    print("No")
