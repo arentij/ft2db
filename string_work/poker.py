@@ -1,4 +1,4 @@
-hand = [[i[0:-1], i[-1]] for i in input()10C JC QC KC AC.split()]
+hand = [[i[0:-1], i[-1]] for i in input().split()]
 # print(hand)
 
 suit = hand[0][1]
