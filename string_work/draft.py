@@ -1,4 +1,2 @@
-def pow(a, p):
-    return a**p
-
-print(pow(2, 5))
+n = int(input())
+print(len(set([int(i) for i in input().split()])))
