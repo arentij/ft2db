@@ -1,7 +1,3 @@
-s = 0
-while True:
-    n = int(input())
-    if n == 0:
-        break
-    s += n
-print(s)
+n = int(input())
+print(len(set([int(i) for i in input().split()])))
+
