@@ -118,6 +118,9 @@ char_to_float_in_data()
 # EXAMPLES
 # Printing q and zeff in Ohmic experiments where q(0) < 1 and ne(0) > 4
 '''for experiment_time in data:
+=======
+for experiment_time in data:
+>>>>>>> 7168faa824ec1a9b78b0f779f6e81be2f80d7000
     if data[experiment_time]["type"] == "OH":
         if data[experiment_time]["vector_data"]["q"][0] <= 1 and data[experiment_time]["vector_data"]["ne"][0] >= 4:
 
@@ -127,6 +130,7 @@ char_to_float_in_data()
             except KeyError:
                 print(experiment_time, ' does not have zeff vector')
 
+<<<<<<< HEAD
 '''
 
 
